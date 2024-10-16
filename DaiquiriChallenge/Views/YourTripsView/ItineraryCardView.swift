@@ -12,10 +12,11 @@ struct ItineraryCardView: View {
     @ObservedObject var myData = sharedData
     var itinerary: Itinerary
     var cardHeight: CGFloat = 100.0
+    var isArchived: Bool
     
     var body: some View {
         NavigationLink {
-            ItineraryDetailsView(itinerary: itinerary)
+            ItineraryDetailsView(itinerary: itinerary, isArchived: isArchived)
         } label: {
             ZStack{
                 Rectangle()
@@ -42,5 +43,5 @@ struct ItineraryCardView: View {
 }
 
 #Preview {
-    ItineraryCardView(itinerary: Itinerary(name: "Naples", duration: 3))
+    ItineraryCardView(itinerary: Itinerary(name: "Naples", duration: 3, activities: []), isArchived: false)
 }
