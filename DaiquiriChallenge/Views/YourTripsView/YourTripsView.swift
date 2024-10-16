@@ -24,7 +24,7 @@ struct YourTripsView: View {
                 } else {
                     ScrollView{
                         ForEach(myData.yourItineraries) { itinerary in
-                            ItineraryCardView(itinerary: itinerary)
+                            ItineraryCardView(itinerary: itinerary, isArchived: false)
                                 .padding([.leading, .bottom, .trailing])
                         }
                         Section{
@@ -36,7 +36,7 @@ struct YourTripsView: View {
                                         .frame(maxWidth: .infinity, alignment: .leading)
                                         .padding(.leading, 20.0)
                                     ForEach(myData.archivedItineraries) { itinerary in
-                                        ItineraryCardView(itinerary: itinerary)
+                                        ItineraryCardView(itinerary: itinerary, isArchived: true)
                                             .padding([.leading, .bottom, .trailing])
                                             .opacity(0.7)
                                     }
