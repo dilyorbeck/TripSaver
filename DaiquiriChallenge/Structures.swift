@@ -8,14 +8,23 @@
 import Foundation
 import SwiftUI
 
-struct Itinerary: Identifiable {
-    var id: UUID = UUID()
-    var name: String
-    var duration: Int
-}
-
 struct Destination: Identifiable {
     var id: UUID = UUID()
     var name: String
     var itinerariesAvailable: [Itinerary]
+}
+
+struct Itinerary: Identifiable {
+    var id: UUID = UUID()
+    var name: String
+    var duration: Int
+    var activities: [Activity]
+}
+
+struct Activity: Identifiable {
+    var id: UUID = UUID()
+    var name: String
+    var hourDuration: Int
+    var day: Int
+    var tips: String
 }
