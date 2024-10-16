@@ -1,10 +1,3 @@
-//
-//  ItineraryDetailsView.swift
-//  DaiquiriChallenge
-//
-//  Created by Luca Maria Incarnato on 14/10/24.
-//
-
 import SwiftUI
 
 struct ItineraryDetailsView: View {
@@ -12,36 +5,42 @@ struct ItineraryDetailsView: View {
     @ObservedObject var myData = sharedData
     var itinerary: Itinerary
     @State var showingTips: Bool = false
+    @State var isArchived = false
     
     var body: some View {
-        NavigationStack{
+        NavigationStack {
             ZStack {
                 Color.gray
                     .opacity(0.1)
                     .ignoresSafeArea()
-                VStack{
-                    VStack{
+                
+                VStack {
+                    VStack {
                         
                     }
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
-                    Button("Archive trip") {
-                        myData.archivedItineraries.append(itinerary)
+                    
+                    Button(action: {
+                        myData.archivedItineraries.append(Itinerary(name: itinerary.name, duration: itinerary.duration))
                         myData.yourItineraries.removeAll(where: { $0.id == itinerary.id })
-                        self.mode.wrappedValue.dismiss()
+                        isArchived = true
+                    }) {
+                        Text(isArchived ? "Archived" : "Archive trip")
                     }
-                        .buttonStyle(.bordered)
-                        .controlSize(.large)
-                        .buttonBorderShape(.capsule)
-                        .tint(.red)
-                        .padding(.bottom, 20)
+                    .buttonStyle(.bordered)
+                    .controlSize(.large)
+                    .buttonBorderShape(.capsule)
+                    .tint(isArchived ? .gray : .red)
+                    .padding(.bottom, 20)
+                    .disabled(isArchived)
                 }
             }
             .toolbar {
-                ToolbarItem (placement: .topBarTrailing){
-                    Button ("Tips"){
+                ToolbarItem(placement: .topBarTrailing) {
+                    Button("Tips") {
                         showingTips.toggle()
                     }
-                    .sheet(isPresented: $showingTips){
+                    .sheet(isPresented: $showingTips) {
                         GeneralTipsView()
                     }
                 }
