@@ -1,3 +1,10 @@
+//
+//  ItineraryDetailsView.swift
+//  DaiquiriChallenge
+//
+//  Created by Luca Maria Incarnato on 14/10/24.
+//
+
 import SwiftUI
 
 struct ItineraryDetailsView: View {
@@ -5,42 +12,44 @@ struct ItineraryDetailsView: View {
     @ObservedObject var myData = sharedData
     var itinerary: Itinerary
     @State var showingTips: Bool = false
-    @State var isArchived = false
+    @State var isArchived: Bool
     
     var body: some View {
-        NavigationStack {
+        NavigationStack{
             ZStack {
                 Color.gray
                     .opacity(0.1)
                     .ignoresSafeArea()
-                
-                VStack {
-                    VStack {
-                        
+                VStack{
+                    ScrollView{
+                        ItineraryInformationView(duration: itinerary.duration, itinerary: itinerary)
                     }
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
-                    
                     Button(action: {
-                        myData.archivedItineraries.append(Itinerary(name: itinerary.name, duration: itinerary.duration))
-                        myData.yourItineraries.removeAll(where: { $0.id == itinerary.id })
-                        isArchived = true
+                        if(!isArchived){
+                            myData.archivedItineraries.append(Itinerary(name: itinerary.name, duration: itinerary.duration, activities: itinerary.activities))
+                            myData.yourItineraries.removeAll(where: { $0.id == itinerary.id })
+                        } else {
+                            myData.yourItineraries.append(Itinerary(name: itinerary.name, duration: itinerary.duration, activities: itinerary.activities))
+                            myData.archivedItineraries.removeAll(where: { $0.id == itinerary.id })
+                        }
+                        isArchived.toggle()
                     }) {
-                        Text(isArchived ? "Archived" : "Archive trip")
+                        Text(isArchived ? "Unarchive trip" : "Archive trip")
                     }
-                    .buttonStyle(.bordered)
-                    .controlSize(.large)
-                    .buttonBorderShape(.capsule)
-                    .tint(isArchived ? .gray : .red)
-                    .padding(.bottom, 20)
-                    .disabled(isArchived)
+                        .buttonStyle(.bordered)
+                        .controlSize(.large)
+                        .buttonBorderShape(.capsule)
+                        .tint(isArchived ? .gray : .red)
+                        .padding(.bottom, 20)
                 }
             }
             .toolbar {
-                ToolbarItem(placement: .topBarTrailing) {
-                    Button("Tips") {
+                ToolbarItem (placement: .topBarTrailing){
+                    Button ("Tips"){
                         showingTips.toggle()
                     }
-                    .sheet(isPresented: $showingTips) {
+                    .sheet(isPresented: $showingTips){
                         GeneralTipsView()
                     }
                 }
@@ -51,5 +60,5 @@ struct ItineraryDetailsView: View {
 }
 
 #Preview {
-    ItineraryDetailsView(itinerary: Itinerary(name: "Naples", duration: 7))
+    ItineraryDetailsView(itinerary: Itinerary(name: "Naples", duration: 1, activities: [Activity(name: "Prova 1", hourDuration: 1, day: 1, tips: "None")]), isArchived: false)
 }
