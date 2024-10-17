@@ -13,6 +13,7 @@ class Data: ObservableObject {
         
         Destination(
             name: "Florence",
+            generalTips: [],
             itinerariesAvailable: [
                 Itinerary(
                     name: "Florence",
@@ -90,6 +91,7 @@ class Data: ObservableObject {
         ),
         Destination(
             name: "Milan",
+            generalTips: [],
             itinerariesAvailable: [
                 Itinerary(
                     name: "Milan",
@@ -167,6 +169,15 @@ class Data: ObservableObject {
         ),
         Destination(
             name: "Naples",
+            generalTips: [
+                "Be aware of pickpockets",
+                "The area around the train station “Garibaldi” is a bit dodgy so pay attention around here, and try to avoid it at night.",
+                "The train system within Italy is a great way to get to the city, Naples is extremely well connected",
+                "There is no train running from Naples' train station to Naples' Airport, but the Naples Alibus Airport Shuttle schedules plenty of buses for 5€.",
+                "Ignore any offer of a transfer from Naples Airport to the city center: likely unlicensed drivers with crazy prices.",
+                "Avoid ‘tourist menus’ and places where neapolitans don't go to eat."
+            ],
+            
             itinerariesAvailable: [
                 Itinerary(
                     name: "Naples",
@@ -244,6 +255,7 @@ class Data: ObservableObject {
         ),
         Destination(
             name: "Rome",
+            generalTips: [],
             itinerariesAvailable: [
                 Itinerary(
                     name: "Rome",
@@ -321,6 +333,7 @@ class Data: ObservableObject {
         ),
         Destination(
             name: "Venice",
+            generalTips: [],
             itinerariesAvailable: [
                 Itinerary(
                     name: "Venice",
@@ -398,6 +411,7 @@ class Data: ObservableObject {
         ),
         Destination(
             name: "Verona",
+            generalTips: [],
             itinerariesAvailable: [
                 Itinerary(
                     name: "Verona",
