@@ -11,6 +11,7 @@ import SwiftUI
 struct Destination: Identifiable {
     var id: UUID = UUID()
     var name: String
+    var generalTips: [String]
     var itinerariesAvailable: [Itinerary]
 }
 
