@@ -31,5 +31,16 @@ struct ItineraryInformationView: View {
 }
 
 #Preview {
-    ItineraryInformationView(duration: 0, itinerary: Itinerary(name: "Naples", duration: 1, activities: [Activity(name: "Prova 1", hourDuration: 1, day: 1, tips: "None")]))
+    ItineraryInformationView(
+        duration: 2,
+        itinerary: Itinerary(
+            name: "Naples",
+            duration: 2,
+            activities: [
+                Activity(name: "Prova 1", hourDuration: 1, day: 1, tips: "None"),
+                Activity(name: "Prova 1", hourDuration: 1, day: 1, tips: "None"),
+                Activity(name: "Prova 1", hourDuration: 1, day: 1, tips: "None"),
+            ]
+        )
+    )
 }
