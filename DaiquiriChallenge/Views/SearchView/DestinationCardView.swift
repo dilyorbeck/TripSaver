@@ -41,5 +41,5 @@ struct DestinationCardView: View {
 }
 
 #Preview {
-    DestinationCardView(destination: Destination(name: "Naples", itinerariesAvailable: []))
+    DestinationCardView(destination: Destination(name: "Naples", generalTips: [], itinerariesAvailable: []))
 }
