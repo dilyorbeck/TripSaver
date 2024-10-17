@@ -16,6 +16,24 @@ class Data: ObservableObject {
             itinerariesAvailable: [
                 Itinerary(
                     name: "Florence",
+                    duration: 0,
+                    activities: [
+                        Activity(
+                            name: "Prova 1",
+                            hourDuration: 1,
+                            day: 1,
+                            tips: "None"
+                        ),
+                        Activity(
+                            name: "Prova 1",
+                            hourDuration: 1,
+                            day: 1,
+                            tips: "None"
+                        )
+                    ]
+                ),
+                Itinerary(
+                    name: "Florence",
                     duration: 1,
                     activities: [
                         Activity(
@@ -34,43 +52,25 @@ class Data: ObservableObject {
                 ),
                 Itinerary(
                     name: "Florence",
+                    duration: 2,
+                    activities: [
+                        Activity(
+                            name: "Prova 1",
+                            hourDuration: 1,
+                            day: 1,
+                            tips: "None"
+                        ),
+                        Activity(
+                            name: "Prova 1",
+                            hourDuration: 1,
+                            day: 1,
+                            tips: "None"
+                        )
+                    ]
+                ),
+                Itinerary(
+                    name: "Florence",
                     duration: 3,
-                    activities: [
-                        Activity(
-                            name: "Prova 1",
-                            hourDuration: 1,
-                            day: 1,
-                            tips: "None"
-                        ),
-                        Activity(
-                            name: "Prova 1",
-                            hourDuration: 1,
-                            day: 1,
-                            tips: "None"
-                        )
-                    ]
-                ),
-                Itinerary(
-                    name: "Florence",
-                    duration: 5,
-                    activities: [
-                        Activity(
-                            name: "Prova 1",
-                            hourDuration: 1,
-                            day: 1,
-                            tips: "None"
-                        ),
-                        Activity(
-                            name: "Prova 1",
-                            hourDuration: 1,
-                            day: 1,
-                            tips: "None"
-                        )
-                    ]
-                ),
-                Itinerary(
-                    name: "Florence",
-                    duration: 7,
                     activities: [
                         Activity(
                             name: "Prova 1",
@@ -93,6 +93,24 @@ class Data: ObservableObject {
             itinerariesAvailable: [
                 Itinerary(
                     name: "Milan",
+                    duration: 0,
+                    activities: [
+                        Activity(
+                            name: "Prova 1",
+                            hourDuration: 1,
+                            day: 1,
+                            tips: "None"
+                        ),
+                        Activity(
+                            name: "Prova 1",
+                            hourDuration: 1,
+                            day: 1,
+                            tips: "None"
+                        )
+                    ]
+                ),
+                Itinerary(
+                    name: "Milan",
                     duration: 1,
                     activities: [
                         Activity(
@@ -111,43 +129,25 @@ class Data: ObservableObject {
                 ),
                 Itinerary(
                     name: "Milan",
+                    duration: 2,
+                    activities: [
+                        Activity(
+                            name: "Prova 1",
+                            hourDuration: 1,
+                            day: 1,
+                            tips: "None"
+                        ),
+                        Activity(
+                            name: "Prova 1",
+                            hourDuration: 1,
+                            day: 1,
+                            tips: "None"
+                        )
+                    ]
+                ),
+                Itinerary(
+                    name: "Milan",
                     duration: 3,
-                    activities: [
-                        Activity(
-                            name: "Prova 1",
-                            hourDuration: 1,
-                            day: 1,
-                            tips: "None"
-                        ),
-                        Activity(
-                            name: "Prova 1",
-                            hourDuration: 1,
-                            day: 1,
-                            tips: "None"
-                        )
-                    ]
-                ),
-                Itinerary(
-                    name: "Milan",
-                    duration: 5,
-                    activities: [
-                        Activity(
-                            name: "Prova 1",
-                            hourDuration: 1,
-                            day: 1,
-                            tips: "None"
-                        ),
-                        Activity(
-                            name: "Prova 1",
-                            hourDuration: 1,
-                            day: 1,
-                            tips: "None"
-                        )
-                    ]
-                ),
-                Itinerary(
-                    name: "Milan",
-                    duration: 7,
                     activities: [
                         Activity(
                             name: "Prova 1",
@@ -170,6 +170,24 @@ class Data: ObservableObject {
             itinerariesAvailable: [
                 Itinerary(
                     name: "Naples",
+                    duration: 0,
+                    activities: [
+                        Activity(
+                            name: "Prova 1",
+                            hourDuration: 1,
+                            day: 1,
+                            tips: "None"
+                        ),
+                        Activity(
+                            name: "Prova 1",
+                            hourDuration: 1,
+                            day: 1,
+                            tips: "None"
+                        )
+                    ]
+                ),
+                Itinerary(
+                    name: "Naples",
                     duration: 1,
                     activities: [
                         Activity(
@@ -188,43 +206,25 @@ class Data: ObservableObject {
                 ),
                 Itinerary(
                     name: "Naples",
+                    duration: 2,
+                    activities: [
+                        Activity(
+                            name: "Prova 1",
+                            hourDuration: 1,
+                            day: 1,
+                            tips: "None"
+                        ),
+                        Activity(
+                            name: "Prova 1",
+                            hourDuration: 1,
+                            day: 1,
+                            tips: "None"
+                        )
+                    ]
+                ),
+                Itinerary(
+                    name: "Naples",
                     duration: 3,
-                    activities: [
-                        Activity(
-                            name: "Prova 1",
-                            hourDuration: 1,
-                            day: 1,
-                            tips: "None"
-                        ),
-                        Activity(
-                            name: "Prova 1",
-                            hourDuration: 1,
-                            day: 1,
-                            tips: "None"
-                        )
-                    ]
-                ),
-                Itinerary(
-                    name: "Naples",
-                    duration: 5,
-                    activities: [
-                        Activity(
-                            name: "Prova 1",
-                            hourDuration: 1,
-                            day: 1,
-                            tips: "None"
-                        ),
-                        Activity(
-                            name: "Prova 1",
-                            hourDuration: 1,
-                            day: 1,
-                            tips: "None"
-                        )
-                    ]
-                ),
-                Itinerary(
-                    name: "Naples",
-                    duration: 7,
                     activities: [
                         Activity(
                             name: "Prova 1",
@@ -247,6 +247,24 @@ class Data: ObservableObject {
             itinerariesAvailable: [
                 Itinerary(
                     name: "Rome",
+                    duration: 0,
+                    activities: [
+                        Activity(
+                            name: "Prova 1",
+                            hourDuration: 1,
+                            day: 1,
+                            tips: "None"
+                        ),
+                        Activity(
+                            name: "Prova 1",
+                            hourDuration: 1,
+                            day: 1,
+                            tips: "None"
+                        )
+                    ]
+                ),
+                Itinerary(
+                    name: "Rome",
                     duration: 1,
                     activities: [
                         Activity(
@@ -265,43 +283,25 @@ class Data: ObservableObject {
                 ),
                 Itinerary(
                     name: "Rome",
+                    duration: 2,
+                    activities: [
+                        Activity(
+                            name: "Prova 1",
+                            hourDuration: 1,
+                            day: 1,
+                            tips: "None"
+                        ),
+                        Activity(
+                            name: "Prova 1",
+                            hourDuration: 1,
+                            day: 1,
+                            tips: "None"
+                        )
+                    ]
+                ),
+                Itinerary(
+                    name: "Rome",
                     duration: 3,
-                    activities: [
-                        Activity(
-                            name: "Prova 1",
-                            hourDuration: 1,
-                            day: 1,
-                            tips: "None"
-                        ),
-                        Activity(
-                            name: "Prova 1",
-                            hourDuration: 1,
-                            day: 1,
-                            tips: "None"
-                        )
-                    ]
-                ),
-                Itinerary(
-                    name: "Rome",
-                    duration: 5,
-                    activities: [
-                        Activity(
-                            name: "Prova 1",
-                            hourDuration: 1,
-                            day: 1,
-                            tips: "None"
-                        ),
-                        Activity(
-                            name: "Prova 1",
-                            hourDuration: 1,
-                            day: 1,
-                            tips: "None"
-                        )
-                    ]
-                ),
-                Itinerary(
-                    name: "Rome",
-                    duration: 7,
                     activities: [
                         Activity(
                             name: "Prova 1",
@@ -324,6 +324,24 @@ class Data: ObservableObject {
             itinerariesAvailable: [
                 Itinerary(
                     name: "Venice",
+                    duration: 0,
+                    activities: [
+                        Activity(
+                            name: "Prova 1",
+                            hourDuration: 1,
+                            day: 1,
+                            tips: "None"
+                        ),
+                        Activity(
+                            name: "Prova 1",
+                            hourDuration: 1,
+                            day: 1,
+                            tips: "None"
+                        )
+                    ]
+                ),
+                Itinerary(
+                    name: "Venice",
                     duration: 1,
                     activities: [
                         Activity(
@@ -342,43 +360,25 @@ class Data: ObservableObject {
                 ),
                 Itinerary(
                     name: "Venice",
+                    duration: 2,
+                    activities: [
+                        Activity(
+                            name: "Prova 1",
+                            hourDuration: 1,
+                            day: 1,
+                            tips: "None"
+                        ),
+                        Activity(
+                            name: "Prova 1",
+                            hourDuration: 1,
+                            day: 1,
+                            tips: "None"
+                        )
+                    ]
+                ),
+                Itinerary(
+                    name: "Venice",
                     duration: 3,
-                    activities: [
-                        Activity(
-                            name: "Prova 1",
-                            hourDuration: 1,
-                            day: 1,
-                            tips: "None"
-                        ),
-                        Activity(
-                            name: "Prova 1",
-                            hourDuration: 1,
-                            day: 1,
-                            tips: "None"
-                        )
-                    ]
-                ),
-                Itinerary(
-                    name: "Venice",
-                    duration: 5,
-                    activities: [
-                        Activity(
-                            name: "Prova 1",
-                            hourDuration: 1,
-                            day: 1,
-                            tips: "None"
-                        ),
-                        Activity(
-                            name: "Prova 1",
-                            hourDuration: 1,
-                            day: 1,
-                            tips: "None"
-                        )
-                    ]
-                ),
-                Itinerary(
-                    name: "Venice",
-                    duration: 7,
                     activities: [
                         Activity(
                             name: "Prova 1",
@@ -401,6 +401,24 @@ class Data: ObservableObject {
             itinerariesAvailable: [
                 Itinerary(
                     name: "Verona",
+                    duration: 0,
+                    activities: [
+                        Activity(
+                            name: "Prova 1",
+                            hourDuration: 1,
+                            day: 1,
+                            tips: "None"
+                        ),
+                        Activity(
+                            name: "Prova 1",
+                            hourDuration: 1,
+                            day: 1,
+                            tips: "None"
+                        )
+                    ]
+                ),
+                Itinerary(
+                    name: "Verona",
                     duration: 1,
                     activities: [
                         Activity(
@@ -419,43 +437,25 @@ class Data: ObservableObject {
                 ),
                 Itinerary(
                     name: "Verona",
+                    duration: 2,
+                    activities: [
+                        Activity(
+                            name: "Prova 1",
+                            hourDuration: 1,
+                            day: 1,
+                            tips: "None"
+                        ),
+                        Activity(
+                            name: "Prova 1",
+                            hourDuration: 1,
+                            day: 1,
+                            tips: "None"
+                        )
+                    ]
+                ),
+                Itinerary(
+                    name: "Verona",
                     duration: 3,
-                    activities: [
-                        Activity(
-                            name: "Prova 1",
-                            hourDuration: 1,
-                            day: 1,
-                            tips: "None"
-                        ),
-                        Activity(
-                            name: "Prova 1",
-                            hourDuration: 1,
-                            day: 1,
-                            tips: "None"
-                        )
-                    ]
-                ),
-                Itinerary(
-                    name: "Verona",
-                    duration: 5,
-                    activities: [
-                        Activity(
-                            name: "Prova 1",
-                            hourDuration: 1,
-                            day: 1,
-                            tips: "None"
-                        ),
-                        Activity(
-                            name: "Prova 1",
-                            hourDuration: 1,
-                            day: 1,
-                            tips: "None"
-                        )
-                    ]
-                ),
-                Itinerary(
-                    name: "Verona",
-                    duration: 7,
                     activities: [
                         Activity(
                             name: "Prova 1",
