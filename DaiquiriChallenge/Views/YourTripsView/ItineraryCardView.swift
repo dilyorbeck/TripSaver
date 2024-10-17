@@ -22,7 +22,7 @@ struct ItineraryCardView: View {
                 Rectangle()
                     .foregroundStyle(colorScheme == .dark ? .black : .white)
                 HStack {
-                    Text("\(2*itinerary.duration+1) days in \(itinerary.name)")
+                    Text("\(2 * itinerary.duration + 1) days in \(itinerary.name)")
                         .font(.title2)
                         .bold()
                         .frame(maxWidth: .infinity, alignment: .leading)
