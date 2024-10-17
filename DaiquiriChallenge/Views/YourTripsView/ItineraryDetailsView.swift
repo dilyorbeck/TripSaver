@@ -50,7 +50,7 @@ struct ItineraryDetailsView: View {
                         showingTips.toggle()
                     }
                     .sheet(isPresented: $showingTips){
-                        GeneralTipsView()
+                        GeneralTipsView(destination: myData.allDestinations.first(where: { $0.name == itinerary.name })!)
                     }
                 }
             }
