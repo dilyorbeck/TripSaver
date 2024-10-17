@@ -58,7 +58,7 @@ struct ItineraryAddView: View {
                         showingTips.toggle()
                     }
                     .sheet(isPresented: $showingTips){
-                        GeneralTipsView()
+                        GeneralTipsView(destination: destination)
                     }
                 }
             }
@@ -71,5 +71,5 @@ struct ItineraryAddView: View {
 }
 
 #Preview {
-    ItineraryAddView(destination: Destination(name: "Naples", itinerariesAvailable: [Itinerary(name: "Naples", duration: 0, activities: [Activity(name: "Prova1", hourDuration: 1, day: 1, tips: "None")])]))
+    ItineraryAddView(destination: Destination(name: "Naples", generalTips: [], itinerariesAvailable: [Itinerary(name: "Naples", duration: 0, activities: [Activity(name: "Prova1", hourDuration: 1, day: 1, tips: "None")])]))
 }
