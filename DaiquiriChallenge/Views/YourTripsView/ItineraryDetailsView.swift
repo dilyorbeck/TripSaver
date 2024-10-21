@@ -26,12 +26,12 @@ struct ItineraryDetailsView: View {
                     }
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
                     Button(action: {
-                        if(!isArchived){
+                        if(!isArchived && !myData.archivedItineraries.contains(where: { $0.name == itinerary.name && $0.duration == itinerary.duration})){
                             myData.archivedItineraries.append(Itinerary(name: itinerary.name, duration: itinerary.duration, activities: itinerary.activities))
-                            myData.yourItineraries.removeAll(where: { $0.id == itinerary.id })
-                        } else {
+                            myData.yourItineraries.removeAll(where: { $0.name == itinerary.name && $0.duration == itinerary.duration})
+                        } else if (isArchived && !myData.yourItineraries.contains(where: { $0.name == itinerary.name && $0.duration == itinerary.duration})) {
                             myData.yourItineraries.append(Itinerary(name: itinerary.name, duration: itinerary.duration, activities: itinerary.activities))
-                            myData.archivedItineraries.removeAll(where: { $0.id == itinerary.id })
+                            myData.archivedItineraries.removeAll(where: { $0.name == itinerary.name && $0.duration == itinerary.duration})
                         }
                         isArchived.toggle()
                     }) {
