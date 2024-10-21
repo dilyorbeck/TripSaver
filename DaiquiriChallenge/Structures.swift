@@ -29,3 +29,4 @@ struct Activity: Identifiable {
     var day: Int
     var tips: String
 }
+
