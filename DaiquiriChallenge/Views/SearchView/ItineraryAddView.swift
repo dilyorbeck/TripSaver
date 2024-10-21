@@ -17,59 +17,71 @@ struct ItineraryAddView: View {
     
     var body: some View {
         NavigationStack{
-            ZStack {
-                Color.gray
-                    .opacity(0.1)
-                    .ignoresSafeArea()
-                VStack{
-                    Picker("Select period", selection: $duration) {
-                        Text("1 day").tag(0)
-                        Text("3 days").tag(1)
-                        Text("5 days").tag(2)
-                        Text("7 days").tag(3)
-                    }
-                    .pickerStyle(.segmented)
-                    .padding(.vertical)
-                    .padding(.horizontal)
-                    .task(id: duration) {
-                        isAdded = false
-                    }
-                    ScrollView{
-                        ItineraryInformationView(duration: duration, itinerary: destination.itinerariesAvailable[duration])
-                    }
-                    .frame(maxWidth: .infinity, maxHeight: .infinity)
-                    Button(isAdded ? "Added" : "Add to \"Your trips\"") {
-                        if duration < destination.itinerariesAvailable.count {
-                            myData.yourItineraries.append(Itinerary(name: destination.itinerariesAvailable[duration].name, duration: destination.itinerariesAvailable[duration].duration, activities: destination.itinerariesAvailable[duration].activities))
-                            isAdded = true
+            if(destination.itinerariesAvailable.isEmpty){
+                ZStack {
+                    Color.gray
+                        .opacity(0.1)
+                        .ignoresSafeArea()
+                    Text("Coming soon")
+                        .font(.subheadline)
+                        .padding()
+                        .foregroundStyle(.gray)
+                }
+                .navigationTitle(destination.name)
+            } else {
+                ZStack {
+                    Color.gray
+                        .opacity(0.1)
+                        .ignoresSafeArea()
+                    VStack{
+                        Picker("Select period", selection: $duration) {
+                            Text("1 day").tag(0)
+                            Text("3 days").tag(1)
+                            Text("5 days").tag(2)
+                            Text("7 days").tag(3)
                         }
-                    }
+                        .pickerStyle(.segmented)
+                        .padding(.vertical)
+                        .padding(.horizontal)
+                        .task(id: duration) {
+                            isAdded = false
+                        }
+                        ScrollView{
+                            ItineraryInformationView(duration: duration, itinerary: destination.itinerariesAvailable[duration])
+                        }
+                        .frame(maxWidth: .infinity, maxHeight: .infinity)
+                        Button(isAdded ? "Added" : "Add to \"Your trips\"") {
+                            if duration < destination.itinerariesAvailable.count {
+                                myData.yourItineraries.append(Itinerary(name: destination.itinerariesAvailable[duration].name, duration: destination.itinerariesAvailable[duration].duration, activities: destination.itinerariesAvailable[duration].activities))
+                                isAdded = true
+                            }
+                        }
                         .buttonStyle(.bordered)
                         .controlSize(.large)
                         .buttonBorderShape(.capsule)
                         .tint(isAdded ? .gray : .green)
-                        .padding(.bottom, 20)
                         .disabled(isAdded)
-                }
-            }
-            .toolbar {
-                ToolbarItem (placement: .topBarTrailing){
-                    Button ("Tips"){
-                        showingTips.toggle()
-                    }
-                    .sheet(isPresented: $showingTips){
-                        GeneralTipsView(destination: destination)
                     }
                 }
-            }
-            .navigationTitle(destination.name)
-            .onAppear {
-                isAdded = false
+                .toolbar {
+                    ToolbarItem (placement: .topBarTrailing){
+                        Button ("Tips"){
+                            showingTips.toggle()
+                        }
+                        .sheet(isPresented: $showingTips){
+                            GeneralTipsView(destination: destination)
+                        }
+                    }
+                }
+                .navigationTitle(destination.name)
+                .onAppear {
+                    isAdded = false
+                }
             }
         }
     }
 }
 
 #Preview {
-    ItineraryAddView(destination: Destination(name: "Naples", generalTips: [], itinerariesAvailable: [Itinerary(name: "Naples", duration: 0, activities: [Activity(name: "Prova1", hourDuration: 1, day: 1, tips: "None")])]))
+    ItineraryAddView(destination: Destination(name: "Naples", generalTips: [], itinerariesAvailable: []))
 }
