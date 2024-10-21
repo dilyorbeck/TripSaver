@@ -12,31 +12,26 @@ struct ActivityCardView: View {
     var activity: Activity
     var cardHeight: CGFloat = 100.0
     
-
     var body: some View {
         ZStack{
             Rectangle()
                 .foregroundStyle(colorScheme == .dark ? .black : .white)
-            HStack {
-                DisclosureGroup("\(activity.name) (\(activity.hourDuration)h)") {
+                DisclosureGroup {
                     Text("Tips: \(activity.tips)")
                         .font(.subheadline)
+                        .multilineTextAlignment(.leading)
                         .frame(maxWidth: .infinity, maxHeight: cardHeight, alignment: .leading)
                         .padding(.leading, 20.0)
                         .foregroundStyle(Color.gray)
+                } label: {
+                    Text("\(activity.name) (\(activity.hourDuration)h)")
+                        .font(.title3)
+                        .bold()
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                        .foregroundStyle(.accent)
                 }
-                    .font(.title2)
-                    .bold()
-                    .frame(maxWidth: .infinity, alignment: .leading)
-                    .padding(.leading, 20.0)
-                    .foregroundStyle(.accent)
-                Image(activity.name.filter{!$0.isWhitespace}.lowercased())
-                    .resizable()
-                    .aspectRatio(contentMode: .fill)
-                    .frame(width: 200, height: cardHeight)
-                    .clipShape(Rectangle())
-                    .cornerRadius(30)
-            }
+                .padding([.leading,.trailing], 20.0)
+                .frame(alignment: .leading)
         }
         .frame(width: .infinity, height: cardHeight)
         .cornerRadius(30)
@@ -44,5 +39,5 @@ struct ActivityCardView: View {
 }
 
 #Preview {
-    ActivityCardView(activity: Activity(name: "Prova 1", hourDuration: 6, day: 0, tips: "No more than 4€"))
+    ActivityCardView(activity: Activity(name: "Try spritz", hourDuration: 24, day: 0, tips: "No more than 4€"))
 }
